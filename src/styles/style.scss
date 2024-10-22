@@ -440,13 +440,13 @@ body {
         color: var(--clr-text-body);
       }
 
-      span {
+      .name {
         color: var(--clr-text-card-name);
         font-size: 16px;
         font-weight: bold;
       }
 
-      small-text {
+      .small-text {
         color: var(--clr-gray-600);
         font-size: 14px;
       }
@@ -598,7 +598,7 @@ body {
   }
 
   footer {
-    small-text {
+    .small-text {
       color: var(--clr-gray-600);
     }
   }

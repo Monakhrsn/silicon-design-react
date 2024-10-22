@@ -12025,7 +12025,7 @@ body .main-header nav .sign-btn {
   color: var(--clr-white);
   border-radius: 5px;
   font-size: 14px;
-  background-image: url("/images/user-icon-white.svg");
+  background-image: url("/assets/images/user-icon-white.svg");
   background-repeat: no-repeat;
   background-position: 1.5rem;
   min-height: 35px;
@@ -12040,7 +12040,7 @@ body .main-header nav .sign-btn:hover {
   color: var(--clr-primary);
   background-color: transparent;
   border: 1px solid var(--clr-primary);
-  background-image: url("/images/user-icon-perpule.svg");
+  background-image: url("/assets/images/user-icon-perpule.svg");
 }
 body .main-header .header-details a {
   background-color: var(--clr-bg-btn-dark);
@@ -12099,7 +12099,7 @@ body .main-header .header-details .discover-btn-wrapper .discover-more {
 }
 @media (min-width: 768px) {
   body .main-header .header-details {
-    background-image: url("/images/Group.svg");
+    background-image: url("/assets/images/Group.svg");
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: 55%;
@@ -12209,7 +12209,7 @@ body #transfer-simple-receive button.learn-more-btn:hover {
   color: var(--clr-primary);
   background-color: transparent;
   border: 1px solid var(--clr-primary);
-  background-image: url("/images/icons/arrow-r-perpule.svg");
+  background-image: url("/assets/images/icons/arrow-r-perpule.svg");
 }
 body #transfer-simple-receive #simple-transfer-info {
   margin-top: 5rem;
@@ -12316,7 +12316,7 @@ body #FAQ-section .accordion-item .accordion-button:not(.collapsed) {
 body #FAQ-section .accordion-item .accordion-button:not(.collapsed):after {
   box-shadow: 0 8px 16px 0 rgba(99, 102, 241, 0.19), 0 6px 20px 0 rgba(99, 102, 241, 0.19);
   background-color: var(--clr-primary);
-  background-image: url("/images/icons/chevron.svg");
+  background-image: url("/assets/images/icons/chevron.svg");
   transform: rotate(0deg);
 }
 @media (min-width: 768px) {
@@ -12329,7 +12329,7 @@ body #FAQ-section .accordion-item .accordion-button:after {
   padding: 1.25rem;
   border-radius: 50%;
   background-position: center;
-  background-image: url("/images/icons/chevron-dark.svg");
+  background-image: url("/assets/images/icons/chevron-dark.svg");
   transform: rotate(180deg);
 }
 @media (min-width: 768px) {
@@ -12385,7 +12385,7 @@ body .subscription {
 }
 body .subscription .input-wrapper .email {
   padding-left: 3rem;
-  background-image: url("/images/icons/envelop.svg");
+  background-image: url("/assets/images/icons/envelop.svg");
   background-repeat: no-repeat;
   background-position: 15px center;
   background-size: 1.5rem;

@@ -37,7 +37,7 @@ const Testimonials = () => {
                   />
                 </div>
                 <div className="col-9 text-start">
-                  <span>Fannie Summers</span>
+                  <span className="name">Fannie Summers</span>
                   <br />
                   <span className="small-text">Designer</span>
                 </div>
@@ -75,7 +75,7 @@ const Testimonials = () => {
                   />
                 </div>
                 <div className="col-9 text-start">
-                  <span>Albert Flores</span>
+                  <span className="name">Albert Flores</span>
                   <br />
                   <span className="small-text">Developer</span>
                 </div>

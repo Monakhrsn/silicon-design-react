@@ -12,7 +12,7 @@ const FAQ = () => {
           <div className=" row d-none d-xl-flex justify-content-md-between ">
             <div className="col-6">
               <div className="contact-us-wrapper">
-                <img className="img-fluid" src="/images/icons/phone.svg" alt="Phone ringing icon" />
+                <img className="img-fluid" src="/assets/images/icons/phone.svg" alt="Phone ringing icon" />
                 <p>Still have questions?</p>
                 <button className="btn-border-none left justify-content-md-between">
                   <span className="pe-2">Contact us</span> 
@@ -21,7 +21,7 @@ const FAQ = () => {
             </div> 
             <div className="col-6">
               <div className="contact-us-wrapper">
-                <img className="img-fluid" src="/images/icons/message.svg" alt="A pop up message" /> 
+                <img className="img-fluid" src="/assets/images/icons/message.svg" alt="A pop up message" /> 
                 <p>Don't like phone calls?</p>
                 <button className="btn-border-none right">
                   <span className="pe-2">Contact us</span> 
@@ -225,7 +225,7 @@ const FAQ = () => {
               <div className="contact-us-wrapper">
                 <img 
                 className="img-fluid" 
-                src="/images/icons/phone.svg" 
+                src="/assets/images/icons/phone.svg" 
                 alt="Phone ringing icon"
                 />
                 <p>Still have  questions?</p>
@@ -238,7 +238,7 @@ const FAQ = () => {
               <div className="contact-us-wrapper">
                 <img 
                 className="img-fluid" 
-                src="/images/icons/message.svg" 
+                src="/assets/images/icons/message.svg" 
                 alt="A pop up message"
                 /> 
                 <p>Don't like phone calls?</p>
