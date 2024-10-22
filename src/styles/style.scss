@@ -154,7 +154,7 @@ body {
         border-radius: 8px;
         min-height: 55px;
 
-        &.appstore {
+        &#appstore {
           min-height: 51px;
           padding: 0.5rem 1rem;
 
@@ -171,7 +171,7 @@ body {
           }  
         }
   
-        &.googleplay {     
+        &#googleplay {     
           min-height: 51px;
           padding: 0.5rem 1rem;
 
