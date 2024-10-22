@@ -1,3 +1,5 @@
+import Brand from "./Brand";
+
 const Brands = () => {
   return (
     <section
@@ -5,36 +7,38 @@ const Brands = () => {
       className="container mt-5 mb-5 d-none d-md-block"
     >
       <div className="row">
-        <div id="brand-1" className="col-md-3 col-xl-2">
-          <div className="img-box">
-            <img src="/assets/images/brand-1.svg" alt="brand icon 1" />
-          </div>
-        </div>
-        <div id="brand-2" className="col-md-3 col-xl-2">
-          <div className="img-box">
-            <img src="/assets/images/brand-2.svg" alt="brand icon 2" />
-          </div>
-        </div>
-        <div id="brand-3" className="col-md-3 col-xl-2">
-          <div className="img-box">
-            <img src="/assets/images/brand-3.svg" alt="brand icon 3" />
-          </div>
-        </div>
-        <div id="brand-4" className="col-md-3 col-xl-2">
-          <div className="img-box">
-            <img src="/assets/images/brand-4.svg" alt="brand icon 4" />
-          </div>
-        </div>
-        <div id="brand-5" className="d-none d-xl-block col-xl-2">
-          <div className="img-box">
-            <img src="/assets/images/brand-5.svg" alt="brand icon 5" />
-          </div>
-        </div>
-        <div id="brand-6" className="d-none d-xl-block col-xl-2">
-          <div className="img-box">
-            <img src="/assets/images/brand-6.svg" alt="brand icon 6" />
-          </div>
-        </div>
+        <Brand
+          brandId="brand-1"
+          imageSrc="/assets/images/brand-1.svg"
+          imageAlt="brand icon 1"
+        />
+        <Brand
+          brandId="brand-2"
+          imageSrc="/assets/images/brand-2.svg"
+          imageAlt="brand icon 2"
+        />
+        <Brand
+          brandId="brand-3"
+          imageSrc="/assets/images/brand-3.svg"
+          imageAlt="brand icon 3"
+        />
+        <Brand
+          brandId="brand-4"
+          imageSrc="/assets/images/brand-4.svg"
+          imageAlt="brand icon 4"
+        />
+        <Brand
+          brandId="brand-5"
+          className="d-none d-xl-block"
+          imageSrc="/assets/images/brand-5.svg"
+          imageAlt="brand icon 5"
+        />
+        <Brand
+          brandId="brand-6"
+          className="d-none d-xl-block"
+          imageSrc="/assets/images/brand-6.svg"
+          imageAlt="brand icon 6"
+        />
       </div>
     </section>
   );
