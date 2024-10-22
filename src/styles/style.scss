@@ -48,8 +48,8 @@ body {
     background-color: transparent;
   }
 
-  .main-header {
-    background-image:linear-gradient(var(--clr-bg-main-header-ingredient-lighter), var(--clr-bg-main-header-ingredient-darker));
+  .header-wrapper {
+    background-image:linear-gradient(var(--clr-bg-header-wrapper-ingredient-lighter), var(--clr-bg-header-wrapper-ingredient-darker));
   
     nav {
       min-height: 70px;

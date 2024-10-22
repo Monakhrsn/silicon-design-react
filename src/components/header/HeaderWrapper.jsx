@@ -1,16 +1,14 @@
 import Nav from './Nav';
 import Header from './Hero';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 
 const HeaderWrapper = () => {
   return ( 
-    <header className="main-header">
-      <Container >
+      <Container className="header-wrapper">
         < Nav />
         <Header /> 
       </Container>
-    </header>
    );
 }
  

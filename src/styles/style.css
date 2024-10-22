@@ -11870,8 +11870,8 @@ body {
   --clr-bg-main: var(--clr-white);
   --clr-bg-accordion: var(--clr-white);
   --clr-bg-light: var(--clr-white);
-  --clr-bg-main-header-ingredient-darker: var(--clr-ingredient-light-mode);
-  --clr-bg-main-header-ingredient-lighter: var(--clr-white);
+  --clr-bg-header-wrapper-ingredient-darker: var(--clr-ingredient-light-mode);
+  --clr-bg-header-wrapper-ingredient-lighter: var(--clr-white);
   --clr-bg-btn-dark: var(--clr-gray-900);
   --clr-bg-accordion-btn-chevron-down: var(--clr-bg-secondry);
   --clr-bg-card: var(--clr-bg-light);
@@ -11891,8 +11891,8 @@ body.dark {
   --clr-bg-main: var(--clr-gray-900);
   --clr-bg-accordion: var(--clr-gray-850);
   --clr-bg-light: var(--clr-gray-850);
-  --clr-bg-main-header-ingredient-darker: var(--clr-ingredient-dark-mode);
-  --clr-bg-main-header-ingredient-lighter: var(--clr-gray-900);
+  --clr-bg-header-wrapper-ingredient-darker: var(--clr-ingredient-dark-mode);
+  --clr-bg-header-wrapper-ingredient-lighter: var(--clr-gray-900);
   --clr-bg-btn-dark: var(--clr-gray-200);
   --clr-bg-accordion-btn-chevron-down: var(--clr-bg-btn-chevron-dark);
   --clr-bg-card: var(--clr-bg-testionial);
@@ -11919,7 +11919,7 @@ body.dark .show-light {
 body.dark .show-dark {
   display: block;
 }
-body.dark .main-header nav .navbar-toggle {
+body.dark .header-wrapper nav .navbar-toggle {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
@@ -11960,36 +11960,36 @@ body .btn-border-none {
   border: none;
   background-color: transparent;
 }
-body .main-header {
+body .header-wrapper {
   background-image: linear-gradient(var(--clr-bg-main-header-ingredient-lighter), var(--clr-bg-main-header-ingredient-darker));
 }
-body .main-header nav {
+body .header-wrapper nav {
   min-height: 70px;
 }
-body .main-header nav a {
+body .header-wrapper nav a {
   text-decoration: none;
   cursor: pointer;
 }
-body .main-header nav a .logo {
+body .header-wrapper nav a .logo {
   margin-right: 0.25rem;
 }
-body .main-header nav a .logo-text {
+body .header-wrapper nav a .logo-text {
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--clr-logo-text);
 }
-body .main-header nav .featurs-link a {
+body .header-wrapper nav .featurs-link a {
   text-decoration: none;
   color: var(--clr-link);
 }
-body .main-header nav .featurs-link a:hover {
+body .header-wrapper nav .featurs-link a:hover {
   color: var(--clr-primary);
 }
-body .main-header nav .form-switch {
+body .header-wrapper nav .form-switch {
   padding: 0;
   margin: 0;
 }
-body .main-header nav .form-switch .form-check-input {
+body .header-wrapper nav .form-switch .form-check-input {
   padding: 0;
   margin: 0;
   --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
@@ -12001,7 +12001,7 @@ body .main-header nav .form-switch .form-check-input {
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  body .main-header nav .form-switch .form-check-input {
+  body .main-hea nav .form-switch .form-check-input {
     box-shadow: none;
   }
 }
