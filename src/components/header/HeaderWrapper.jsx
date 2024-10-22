@@ -1,5 +1,5 @@
 import Nav from './Nav';
-import Header from './Hero';
+import Hero from './Hero';
 import { Container } from 'react-bootstrap';
 
 
@@ -8,7 +8,7 @@ const HeaderWrapper = () => {
     <header className="header-wrapper">
       <Container>
         < Nav />
-        <Header /> 
+        <Hero /> 
       </Container>
     </header>
   );

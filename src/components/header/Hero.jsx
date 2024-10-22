@@ -2,7 +2,7 @@ import { Row, Col, Button } from 'react-bootstrap';
 
 const Hero = () => {
   return ( 
-    <Row className="header-details mt-5 pb-md-5">
+    <Row className="hero mt-5 pb-md-5">
       <Col>
         <Row className="justify-content-md-center justify-content-xl-start align-items-xl-end">
           <Col xs={12} md={6}>
