@@ -1,4 +1,4 @@
-import MainHeader from "./components/main-header/MainHeader";
+import HeaderWrapper from "./components/header/HeaderWrapper";
 import Brands from "./components/main/brands";
 import AppFeatures from "./components/main/AppFeatures";
 import HowWork from "./components/main/HowWork";
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <main>
-        <MainHeader />
+        <HeaderWrapper />
         <Brands />
         <AppFeatures />
         <HowWork />
