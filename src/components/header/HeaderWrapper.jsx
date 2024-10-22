@@ -5,11 +5,13 @@ import { Container } from 'react-bootstrap';
 
 const HeaderWrapper = () => {
   return ( 
-      <Container className="header-wrapper">
+    <header className="header-wrapper">
+      <Container>
         < Nav />
         <Header /> 
       </Container>
-   );
+    </header>
+  );
 }
  
 export default HeaderWrapper;
