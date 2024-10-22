@@ -10,7 +10,7 @@ import Footer from "./components/footer/Footer";
 function App() {
   return (
     <>
-        <HeaderWrapper />
+      <HeaderWrapper />
       <main>
         <Brands />
         <AppFeatures />

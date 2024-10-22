@@ -7,7 +7,7 @@ const HeaderWrapper = () => {
   return ( 
     <header className="header-wrapper">
       <Container>
-        < Nav />
+        <Nav />
         <Hero /> 
       </Container>
     </header>
