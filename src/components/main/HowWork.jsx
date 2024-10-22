@@ -1,52 +1,54 @@
+import { Container, Col, Row, Image } from "react-bootstrap";
+
 const HowWork = () => {
   return ( 
     <section id="how-work-section">
-      <div className="container text-center">
-        <div className="row justify-content-center justify-content-md-around">
+      <Container className="text-center">
+        <Row className="justify-content-center justify-content-md-around">
           <h2 className="text-center">How Does It Work?</h2>
-          <div id="mobile-images" className="col-xl-10">
-            <div className="row">
-              <div id="left" className="col-md-4">
-                <img 
+          <Col xl={10} id="mobile-images">
+            <Row>
+              <Col md={4} id="left">
+                <Image 
                 id="visa-card-img"
                 className="d-none d-md-block d-xl-none" 
                 src="/assets/images/how-work-group/tablet/visa-tablet-left.svg" 
                 alt="Mobile shows visa card"
                 />
-                <img 
+                <Image 
                 className="d-none d-xl-block" 
                 src="/assets/images/how-work-group/desktop/my-budget-left.svg" 
                 alt="Mobile shows my budget"
                 />
-              </div>
-              <div id="center" className="col-md-4">
-                <img
+              </Col>
+              <Col md={4} id="center">
+                <Image
                 id="transfer-balance-img" 
                 className="d-xl-none"
                 src="/assets/images/how-work-group/mobile/transfer-balance-center.svg" 
                 alt="Mobile shows transfer balance and contact list" 
                 />
-                <img 
+                <Image 
                 className="d-none d-xl-block"
                 src="/assets/images/how-work-group/desktop/your-cards-center.svg" 
                 alt="Mobile shows your card, visa card" 
                 />
-              </div>
-              <div id="right" className="col-md-4">
-                <img 
+              </Col>
+              <Col md={4} id="right">
+                <Image 
                 className="d-none d-md-block d-xl-none" 
                 src="/assets/images/how-work-group/tablet/transfer-one-person-right.svg" 
                 alt="Mobile shows transfer money to one person"
                 />
-                <img 
+                <Image 
                 className="d-none d-xl-block" 
                 src="/assets/images/how-work-group/desktop/transfer-balance-no-frame-right.svg" 
                 alt="Mobile shows transfer money to three persons"
                 />
-              </div>
-            </div>
-          </div>
-        </div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
         <div id="how-work-info">
           <h4 className="d-md-none">
             Transfers to people from your contact list
@@ -68,7 +70,7 @@ const HowWork = () => {
             condimentum. 
           </p>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
