@@ -2,6 +2,7 @@ import HeaderWrapper from "./components/header/HeaderWrapper";
 import Brands from "./components/main/brands";
 import AppFeatures from "./components/main/AppFeatures";
 import HowWork from "./components/main/HowWork";
+import Transfer from "./components/main/Transfer";
 import Testimonials from "./components/main/Testimonials";
 import FAQ from "./components/main/FAQ";
 import Subscription from "./components/main/Subscription";
@@ -15,6 +16,7 @@ function App() {
         <Brands />
         <AppFeatures />
         <HowWork />
+        <Transfer />
         <Testimonials />
         <FAQ />
         <Subscription />
