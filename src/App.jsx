@@ -3,7 +3,7 @@ import Brands from "./components/main/brands/Brands";
 import AppFeatures from "./components/main/features/AppFeatures";
 import HowWork from "./components/main/HowWork";
 import Transfer from "./components/main/transfer/Transfer";
-import Testimonials from "./components/main/Testimonials";
+import Testimonials from "./components/main/testimonials/Testimonials";
 import FAQ from "./components/main/FAQ";
 import Subscription from "./components/main/Subscription";
 import Footer from "./components/footer/Footer";
