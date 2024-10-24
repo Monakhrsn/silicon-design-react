@@ -2,7 +2,7 @@ import { Container, Col, Row, Image, Button } from "react-bootstrap";
 
 const Subscription = () => {
   return (
-    <section className="container pt-md-4">
+    <section className="pt-md-4">
       <Container>
         <Row>
           <Col>
