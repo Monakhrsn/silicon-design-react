@@ -6,6 +6,7 @@ import {
   Container,
   Accordion,
 } from "react-bootstrap";
+import ContactUs from "./ContactUs"
 
 const FAQ = () => {
   return (
@@ -20,32 +21,20 @@ const FAQ = () => {
               </Col>
             </Row>
             <Row className="d-none d-xl-flex justify-content-md-between ">
-              <Col xs={6}>
-                <div className="contact-us-wrapper">
-                  <Image
-                    className="img-fluid"
-                    src="/assets/images/icons/phone.svg"
-                    alt="Phone ringing icon"
-                  />
-                  <p>Still have questions?</p>
-                  <Button className="btn-border-none left justify-content-md-between">
-                    <span className="pe-2">Contact us</span>
-                  </Button>
-                </div>
-              </Col>
-              <Col xs={6}>
-                <div className="contact-us-wrapper">
-                  <Image
-                    className="img-fluid"
-                    src="/assets/images/icons/message.svg"
-                    alt="A pop up message"
-                  />
-                  <p>Don't like phone calls?</p>
-                  <Button className="btn-border-none right">
-                    <span className="pe-2">Contact us</span>
-                  </Button>
-                </div>
-              </Col>
+              <ContactUs 
+              buttonClassName="btn-border-none left justify-content-md-between"
+              imageSrc="/assets/images/icons/phone.svg"
+              imageAlt="Phone ringing icon"
+              pText="Still have questions?"
+              buttonText="Contact us"
+              />
+              <ContactUs 
+              imageSrc="/assets/images/icons/message.svg"
+              imageAlt="A pop up message"
+              pText="Don't like phone calls?"
+              buttonClassName="btn-border-none right"
+              buttonText="Contact us"
+              />
             </Row>
           </Col>
           <Col xs={12} xl={7} className="my-xl-5">
@@ -154,32 +143,20 @@ const FAQ = () => {
               </Accordion>
             </Row>
             <Row className="d-none d-md-flex  d-xl-none">
-              <Col xs={6}>
-                <div className="contact-us-wrapper">
-                  <Image
-                    className="img-fluid"
-                    src="/assets/images/icons/phone.svg"
-                    alt="Phone ringing icon"
-                  />
-                  <p>Still have questions?</p>
-                  <Button className="btn-border-none left">
-                    <span className="pe-2">Contact us</span>
-                  </Button>
-                </div>
-              </Col>
-              <Col xs={6}>
-                <div className="contact-us-wrapper">
-                  <Image
-                    className="img-fluid"
-                    src="/assets/images/icons/message.svg"
-                    alt="A pop up message"
-                  />
-                  <p>Don't like phone calls?</p>
-                  <Button className="btn-border-none right">
-                    <span className="pe-2">Contact us</span>
-                  </Button>
-                </div>
-              </Col>
+              <ContactUs
+              imageSrc="/assets/images/icons/phone.svg"
+              imageAlt="Phone ringing icon"
+              pText="Still have questions?"
+              buttonClassName="btn-border-none left"
+              buttonText="Contact us"
+              />
+              <ContactUs
+              imageSrc="/assets/images/icons/message.svg"
+              imageAlt="A pop up message"
+              pText="Don't like phone calls?"
+              buttonClassName="btn-border-none right"
+              buttonText="Contact us"
+              />
             </Row>
             <Row className="d-md-none">
               <Col xs={12} className="my-5 text-center transition">
