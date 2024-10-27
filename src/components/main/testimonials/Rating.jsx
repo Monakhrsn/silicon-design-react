@@ -1,15 +1,8 @@
-
-
-const Rating = ({ filledClass, unfilledClass}) => {
-  return (
-    <div className="rating">
-      <span className={filledClass}></span>
-      <span className={filledClass}></span>
-      <span className={filledClass}></span>
-      <span className={filledClass}></span>
-      <span className={unfilledClass}></span>
-    </div>
-  );
-};
+const Rating = ({isFilled}) => {
+  return <span
+  className={isFilled ? "star filled" : "star unfilled"}
+>
+</span>
+}
 
 export default Rating;

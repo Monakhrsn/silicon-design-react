@@ -1,7 +1,47 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
 import TestimonialCard from "./testimonialCard";
+import { useEffect, useState } from "react";
 
 const Testimonials = () => {
+  const [data, settData] = useState([]);
+  const [error, setError] = useState([null]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          "https://win24-assignment.azurewebsites.net/api/testimonials"
+        );
+
+        if (!res.ok) {
+          throw new Error(`An Error occured! Status: ${res.status}`);
+        }
+
+        const fetchedData = await res.json();
+        console.log(fetchedData);
+
+        settData(fetchedData);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const mappedData = data.map((item, id) => (
+    <TestimonialCard
+      key={id}
+      text={item.comment}
+      avatarUrl={item.avatarUrl}
+      nameClass="name"
+      name={item.author}
+      rating={item.starRating}
+      jobbClass="small-text"
+      jobbRole={item.jobRole}
+    />
+  ))
+
   return (
     <section id="clients-testimonials" className="d-none d-xl-block">
       <Container>
@@ -9,29 +49,7 @@ const Testimonials = () => {
           <Col xs={4}>
             <h2>Clients are Loving Our App</h2>
           </Col>
-          <TestimonialCard
-            text="Sit pretium aliquam tempor, orci dolor sed maecenas rutrum sagittis.
-                  Laoreet posuere rhoncus, egestas lacus, egestas justo aliquam vel.
-                  Nisi vitae lectus hac hendrerit. Montes justo turpis sit amet."
-            imageSrc="/assets/images/icons/avatar-female.svg"
-            imageAlt="A female designer avatar"
-            nameClass="name"
-            nameText="Fannie Summers"
-            proffClass="small-text"
-            proffText="Designer"
-          />
-          <TestimonialCard
-            text="Sit pretium aliquam tempor, orci dolor sed maecenas rutrum
-                sagittis. Laoreet posuere rhoncus, egestas lacus, egestas justo
-                aliquam vel. Nisi vitae lectus hac hendrerit. Montes justo
-                turpis sit amet."
-            imageSrc="/assets/images/icons/avatar-male.svg"
-            imageAlt="A male developer avatar"
-            nameClass="name"
-            nameText="Albert Flores"
-            proffClass="small-text"
-            proffText="Developer"
-          />
+          { mappedData }
         </Row>
       </Container>
     </section>

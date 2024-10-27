@@ -20,7 +20,7 @@ const FAQ = () => {
         }
 
         const fetchedata = await res.json();
-        console.log(fetchedata);
+        // console.log(fetchedata);
 
         setData(fetchedata);
       } catch (err) {

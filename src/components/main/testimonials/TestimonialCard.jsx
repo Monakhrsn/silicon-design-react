@@ -1,8 +1,16 @@
-import { Col, Row, Image } from "react-bootstrap";
+import { Col, Image } from "react-bootstrap";
 import ClientInfo from "./ClientInfo";
-import Rating from "./Rating";
+import Ratings from "./Ratings";
 
-const TestimonialCard = ({ text, imageSrc, imageAlt, nameClass, nameText, proffClass, proffText  }) => {
+const TestimonialCard = ({
+  text,
+  avatarUrl,
+  nameClass,
+  name,
+  jobbClass,
+  jobbRole,
+  rating
+}) => {
   return (
     <Col xs={4}>
       <div className="card testimonial-card shadow-sm">
@@ -10,25 +18,22 @@ const TestimonialCard = ({ text, imageSrc, imageAlt, nameClass, nameText, proffC
           <Image
             className="img-fluid"
             src="/assets/images/icons/quote-white.svg"
-            alt=""
           />
         </div>
-        <Rating
-        className="rating" 
-        filledClass="star filled"
-        unfilledClass="star unfilled"
+        <Ratings
+          className="rating"
+          rating={rating}
+          filledClass="star filled"
+          unfilledClass="star unfilled"
         />
-        <p>
-          {text}
-        </p>
-        <ClientInfo 
-        imageClass="img-fluid"
-        imageSrc={imageSrc}
-        imageAlt={imageAlt}
-        nameClass={nameClass}
-        nameText={nameText}
-        proffClass={proffClass}
-        proffText={proffText}
+        <p>{text}</p>
+        <ClientInfo
+          imageClass="img-fluid"
+          avatarUrl={avatarUrl}
+          nameClass={nameClass}
+          name={name}
+          jobbClass={jobbClass}
+          jobbRole={jobbRole}
         />
       </div>
     </Col>

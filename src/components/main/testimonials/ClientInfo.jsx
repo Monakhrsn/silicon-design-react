@@ -2,22 +2,21 @@ import { Row, Col, Image } from "react-bootstrap";
 
 const ClientInfo = ({
   imageClass,
-  imageSrc,
-  imageAlt,
+  avatarUrl,
   nameClass,
-  nameText,
+  name,
   proffClass,
-  proffText,
+  jobbRole,
 }) => {
   return (
     <Row>
       <Col xs={3}>
-        <Image className={imageClass} src={imageSrc} alt={imageAlt} />
+        <Image className={imageClass} src={avatarUrl} />
       </Col>
       <Col xs={9} className="text-start">
-        <span className={nameClass}>{nameText}</span>
+        <span className={nameClass}>{name}</span>
         <br />
-        <span className={proffClass}>{proffText}</span>
+        <span className={proffClass}>{jobbRole}</span>
       </Col>
     </Row>
   );
