@@ -19,10 +19,10 @@ const FAQ = () => {
           throw new Error(`An Error occured! Status: ${res.status}`);
         }
 
-        const data = await res.json();
-        console.log(data);
+        const fetchedata = await res.json();
+        console.log(fetchedata);
 
-        setData(data);
+        setData(fetchedata);
       } catch (err) {
         setError(err.message);
       }
