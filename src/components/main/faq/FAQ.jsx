@@ -1,8 +1,35 @@
 import { Col, Button, Row, Container, Accordion } from "react-bootstrap";
 import ContactUs from "./ContactUs";
 import AccordionItem from "./AccordionItem";
+import { useEffect, useState } from "react";
 
 const FAQ = () => {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState([null]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setError(null);
+
+        const res = await fetch(
+          "https://win24-assignment.azurewebsites.net/api/faq"
+        );
+        if (!res.ok) {
+          throw new Error(`An Error occured! Status: ${res.status}`);
+        }
+
+        const data = await res.json();
+        console.log(data);
+
+        setData(data);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <section id="FAQ-section">
@@ -35,74 +62,19 @@ const FAQ = () => {
           <Col xs={12} xl={7} className="my-xl-5">
             <Row>
               <Accordion defaultActiveKey="0">
-                <AccordionItem
-                  eventKey="0"
-                  headerText="Is any of my personal information stored in the App?"
-                  bodyText="Nunc duis id aenean gravida tincidunt eu, tempor
-                    ullamcorper. Viverra aliquam arcu, viverra et, cursus.
-                    Aliquet pretium cursus adipiscing gravida et consequat
-                    lobortis arcu velit. Nibh pharetra fermentum duis accumsan
-                    lectus non. Massa cursus molestie lorem scelerisque
-                    pellentesque. Nisi, enim, arcu purus gravida adipiscing
-                    euismod montes, duis egestas. Vehicula eu etiam quam
-                    tristique tincidunt suspendisse ut consequat."
-                />
-                <AccordionItem
-                  eventKey="1"
-                  headerText="What formats can I download my transaction history in?"
-                  bodyText="It is hidden by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the"
-                />
-                <AccordionItem
-                  eventKey="2"
-                  headerText="Can I schedule future transfers?"
-                  bodyText="It is hidden by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the"
-                />
-                <AccordionItem
-                  eventKey="3"
-                  headerText="When can I use Banking App services?"
-                  bodyText="It is hidden by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the"
-                />
-                <AccordionItem
-                  eventKey="4"
-                  headerText="Can I create my own password that is easy for me to
-                    remember?"
-                  bodyText="It is hidden by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the"
-                />
-                <AccordionItem
-                  eventKey="5"
-                  headerText="What happens if I forget or lose my password?"
-                  bodyText="It is hidden by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the"
-                />
+                {error && <p>Error, loading : {error}</p>}
+                {data.length > 0 ? (
+                  data.map((item, id) => (
+                    <AccordionItem
+                      key={id}
+                      eventKey={id}
+                      headerText={item.title}
+                      bodyText={item.content}
+                    />
+                  ))
+                ) : (
+                  <p>Loading .. .</p>
+                )}
               </Accordion>
             </Row>
             <Row className="d-none d-md-flex  d-xl-none">
