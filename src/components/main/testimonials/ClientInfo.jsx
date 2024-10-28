@@ -3,20 +3,19 @@ import { Row, Col, Image } from "react-bootstrap";
 const ClientInfo = ({
   imageClass,
   avatarUrl,
-  nameClass,
+  // nameClass,
   name,
-  proffClass,
   jobbRole,
 }) => {
   return (
     <Row>
       <Col xs={3}>
-        <Image className={imageClass} src={avatarUrl} />
+        <Image className="img-fluid" src={avatarUrl} />
       </Col>
       <Col xs={9} className="text-start">
-        <span className={nameClass}>{name}</span>
+        <span className="name">{name}</span>
         <br />
-        <span className={proffClass}>{jobbRole}</span>
+        <span className="small-text">{jobbRole}</span>
       </Col>
     </Row>
   );

@@ -5,9 +5,7 @@ import Ratings from "./Ratings";
 const TestimonialCard = ({
   text,
   avatarUrl,
-  nameClass,
   name,
-  jobbClass,
   jobbRole,
   rating
 }) => {
@@ -28,11 +26,8 @@ const TestimonialCard = ({
         />
         <p>{text}</p>
         <ClientInfo
-          imageClass="img-fluid"
           avatarUrl={avatarUrl}
-          nameClass={nameClass}
           name={name}
-          jobbClass={jobbClass}
           jobbRole={jobbRole}
         />
       </div>

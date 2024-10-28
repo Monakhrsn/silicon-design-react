@@ -34,10 +34,8 @@ const Testimonials = () => {
       key={id}
       text={item.comment}
       avatarUrl={item.avatarUrl}
-      nameClass="name"
       name={item.author}
       rating={item.starRating}
-      jobbClass="small-text"
       jobbRole={item.jobRole}
     />
   ))
