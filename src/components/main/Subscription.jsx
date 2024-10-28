@@ -1,4 +1,12 @@
-import { Container, Col, Row, Image, Button } from "react-bootstrap";
+import {
+  Container,
+  Col,
+  Row,
+  Image,
+  Button,
+  InputGroup,
+  Form,
+} from "react-bootstrap";
 
 const Subscription = () => {
   return (
@@ -31,8 +39,8 @@ const Subscription = () => {
                 <Col md={6}>
                   <Row>
                     <Col className="d-flex justify-content-start align-items-center px-5">
-                      <div className="input-group input-wrapper mb-4 mb-md-0">
-                        <input
+                      <InputGroup className="input-wrapper mb-4 mb-md-0">
+                        <Form.Control
                           type="text"
                           className="form-control email"
                           placeholder="Your Email"
@@ -46,7 +54,7 @@ const Subscription = () => {
                         >
                           Subscribe
                         </Button>
-                      </div>
+                      </InputGroup>
                     </Col>
                   </Row>
                 </Col>
