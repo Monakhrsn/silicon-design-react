@@ -3,8 +3,9 @@ import TestimonialCard from "./testimonialCard";
 import { useEffect, useState } from "react";
 
 const Testimonials = () => {
-  const [data, settData] = useState([]);
-  const [error, setError] = useState([null]);
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,17 +18,26 @@ const Testimonials = () => {
           throw new Error(`An Error occured! Status: ${res.status}`);
         }
 
-        const fetchedData = await res.json();
-        console.log(fetchedData);
+        const fetchResponse = await res.json();
 
-        settData(fetchedData);
+        setData(fetchResponse);
+        setLoading(false);
       } catch (err) {
-        setError(err.message);
+        setError(err);
+        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
+
+  if (loading) {
+    return <div>Loading.. .</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   const mappedData = data.map((item, id) => (
     <TestimonialCard
@@ -38,7 +48,7 @@ const Testimonials = () => {
       rating={item.starRating}
       jobbRole={item.jobRole}
     />
-  ))
+  ));
 
   return (
     <section id="clients-testimonials" className="d-none d-xl-block">
@@ -47,7 +57,7 @@ const Testimonials = () => {
           <Col xs={4}>
             <h2>Clients are Loving Our App</h2>
           </Col>
-          { mappedData }
+          {mappedData}
         </Row>
       </Container>
     </section>

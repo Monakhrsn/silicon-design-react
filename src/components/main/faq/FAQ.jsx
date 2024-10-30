@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 
 const FAQ = () => {
   const [data, setData] = useState([]);
-  const [error, setError] = useState([null]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,21 +16,31 @@ const FAQ = () => {
         const res = await fetch(
           "https://win24-assignment.azurewebsites.net/api/faq"
         );
+
         if (!res.ok) {
           throw new Error(`An Error occured! Status: ${res.status}`);
         }
 
-        const fetchedata = await res.json();
-        // console.log(fetchedata);
+        const fetcheResponse = await res.json();
 
-        setData(fetchedata);
+        setData(fetcheResponse);
+        setLoading(false);
       } catch (err) {
-        setError(err.message);
+        setError(err);
+        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
+
+  if (loading) {
+    return <div>Loading.. .</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <section id="FAQ-section">
