@@ -8,29 +8,29 @@ const FAQ = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setError(null);
+  const fetchData = async () => {
+    try {
+      setError(null);
 
-        const res = await fetch(
-          "https://win24-assignment.azurewebsites.net/api/faq"
-        );
+      const res = await fetch(
+        "https://win24-assignment.azurewebsites.net/api/faq"
+      );
 
-        if (!res.ok) {
-          throw new Error(`An Error occured! Status: ${res.status}`);
-        }
-
-        const fetcheResponse = await res.json();
-
-        setData(fetcheResponse);
-        setLoading(false);
-      } catch (err) {
-        setError(err);
-        setLoading(false);
+      if (!res.ok) {
+        throw new Error(`An Error occured! Status: ${res.status}`);
       }
-    };
 
+      const fetcheResponse = await res.json();
+
+      setData(fetcheResponse);
+      setLoading(false);
+    } catch (err) {
+      setError(err);
+      setLoading(false);
+    }
+  };
+  
+  useEffect(() => {
     fetchData();
   }, []);
 

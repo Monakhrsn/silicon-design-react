@@ -7,27 +7,27 @@ const Testimonials = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(
-          "https://win24-assignment.azurewebsites.net/api/testimonials"
-        );
+  const fetchData = async () => {
+    try {
+      const res = await fetch(
+        "https://win24-assignment.azurewebsites.net/api/testimonials"
+      );
 
-        if (!res.ok) {
-          throw new Error(`An Error occured! Status: ${res.status}`);
-        }
-
-        const fetchResponse = await res.json();
-
-        setData(fetchResponse);
-        setLoading(false);
-      } catch (err) {
-        setError(err);
-        setLoading(false);
+      if (!res.ok) {
+        throw new Error(`An Error occured! Status: ${res.status}`);
       }
-    };
 
+      const fetchResponse = await res.json();
+
+      setData(fetchResponse);
+      setLoading(false);
+    } catch (err) {
+      setError(err);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
     fetchData();
   }, []);
 
