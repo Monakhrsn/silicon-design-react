@@ -47,6 +47,7 @@ const Subscription = (e) => {
       
       if (res.ok) {
         setLoading(false);
+        setEmail('');
         alert('you have successfully subescribed!');
       } else {
         throw new Error(`An Error occured! Status: ${res.status}`);
@@ -56,6 +57,8 @@ const Subscription = (e) => {
       setError(err);
       setLoading(false);
     }
+
+    
  
     if (loading) {
       return <div>Loading.. .</div>
