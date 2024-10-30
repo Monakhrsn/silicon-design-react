@@ -12,7 +12,8 @@ import {
 const Subscription = (e) => {
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(true);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const isValidEmail =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -27,30 +28,35 @@ const Subscription = (e) => {
     e.preventDefault();
 
     if (!isValid) {
-      return alert(`Emai address you have insert i not ${email}`);
+      return alert(`Email address you have insert is not Valid`);
     }
 
+    try {
+      console.log('sending ...')
+      const res = await fetch(
+        "https://win24-assignment.azurewebsites.net/api/forms/subscribe", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }, 
+          body: JSON.stringify({email})
+        }, 
+      );
 
-    // try {
-    //   const res = await fetch(
-    //     "https://win24-assignment.azurewebsites.net/api/forms/subscribe"
-    //   );
-
-    //   if (!res.ok) {
-    //     throw new Error(`An Error occured! Status: ${res.status}`);
-    //   }
-
-    //   const fetchResponse = await res.json();
-    //   console.log(fetchResponse)
-
-    //   setData(fetchResponse);
-    //   setLoading(false);
-    // } catch (err) {
-    //   setError(err);
-    //   setLoading(false);
-    // }
-
-  
+      console.log(res.status)
+      
+      if (res.ok) {
+        setLoading(false);
+        alert('you have successfully subescribed!');
+      } else {
+        throw new Error(`An Error occured! Status: ${res.status}`);
+      }
+    } catch (err) {
+      alert('Something went wrong! Please try again later. Error: ' + err.message)
+      setError(err);
+      setLoading(false);
+    }
+ 
     if (loading) {
       return <div>Loading.. .</div>
     }
