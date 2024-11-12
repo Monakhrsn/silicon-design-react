@@ -29,13 +29,9 @@ const Nav = () => {
             <span className="logo-text">Silicon</span>
           </Navbar.Brand>
         </Col>
-
-
         <Col xl={2} className="features-link d-none d-xl-block ">
           <BootstrapNav.Link href="#">Features</BootstrapNav.Link>
         </Col>
-
-        
         <Col xs={6} xl={8}>
           <Row className="justify-content-end align-items-center">
             <DarkModeSwitch />
