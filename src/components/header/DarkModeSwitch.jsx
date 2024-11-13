@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Col, Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 
 const DarkModeSwitch = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -16,7 +16,6 @@ const DarkModeSwitch = () => {
     } else {
       disableDarkMode();
     }
-
   }, []);
 
   const toggleDarkMode = () => {
@@ -40,19 +39,25 @@ const DarkModeSwitch = () => {
   };
 
   return (
-    <Col xs={3} md={5} xl={4} className="form-wrapper">
-      <Form.Label
-        className="dark-mode-text d-none d-md-block text-md-end"
-        aria-label="darkmode switch"
-      >
-        Dark Mode
-      </Form.Label>
-      <Form.Check
-        // className="form-check-input"
-        type="switch"
-        checked={isDarkMode}
-        onChange={toggleDarkMode}
-      />
+    <Col xs={3} md={5} xl={4} className="form-wrapper" >
+      <Row className="text-xl-end">
+        <Col md={8} xl={10} >
+          <Form.Label
+            className="dark-mode-text d-none d-md-block text-md-end"
+            aria-label="darkmode switch"
+          >
+            Dark Mode
+          </Form.Label>
+        </Col>
+        <Col>
+          <Form.Check
+            // className="form-check-input"
+            type="switch"
+            checked={isDarkMode}
+            onChange={toggleDarkMode}
+          />
+        </Col>
+      </Row>
     </Col>
   );
 };
