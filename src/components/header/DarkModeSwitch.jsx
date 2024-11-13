@@ -5,59 +5,55 @@ const DarkModeSwitch = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const hasDarkMode = localStorage.getItem("darkMode");
+    const themeMode = localStorage.getItem("themeMode");
 
-    if (
-      hasDarkMode === "dark" ||
-      (!hasDarkMode &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
+    if (themeMode === "dark") {
+      enableDarkMode();
+    } else if (themeMode === "light") {
+      disableDarkMode();
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       enableDarkMode();
     } else {
       disableDarkMode();
     }
+
   }, []);
 
   const toggleDarkMode = () => {
     if (isDarkMode) {
-      setIsDarkMode(false);
       disableDarkMode();
     } else {
-      setIsDarkMode(true);
       enableDarkMode();
     }
   };
 
   const enableDarkMode = () => {
     setIsDarkMode(true);
-    localStorage.setItem("darkMode", "dark");
+    localStorage.setItem("themeMode", "dark");
     document.body.classList.add("dark");
   };
 
   const disableDarkMode = () => {
     setIsDarkMode(false);
-    localStorage.setItem("darkMode", "light");
+    localStorage.setItem("themeMode", "light");
     document.body.classList.remove("dark");
   };
 
   return (
-    <>
+    <Col xs={3} md={5} xl={4} className="form-wrapper">
       <Form.Label
-        className="dark-mode-text d-none col-4 d-md-block text-md-end"
-        xl={2}
+        className="dark-mode-text d-none d-md-block text-md-end"
         aria-label="darkmode switch"
       >
         Dark Mode
       </Form.Label>
-      <Col xs={3} xl={2}>
-        <Form.Check
-          className="form-check-input"
-          type="switch"
-          checked={isDarkMode}
-          onChange={toggleDarkMode}
-        />
-      </Col>
-    </>
+      <Form.Check
+        // className="form-check-input"
+        type="switch"
+        checked={isDarkMode}
+        onChange={toggleDarkMode}
+      />
+    </Col>
   );
 };
 
