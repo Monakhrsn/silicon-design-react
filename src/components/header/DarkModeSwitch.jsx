@@ -48,7 +48,7 @@ const DarkModeSwitch = () => {
           Dark Mode
         </Form.Label>
       </Col>  
-      <Col sm={4} xl={2}>
+      <Col sm={4} xl={2} className="text-center" >
         <Form.Check
           type="switch"
           checked={isDarkMode}

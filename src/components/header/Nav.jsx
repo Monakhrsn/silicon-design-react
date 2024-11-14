@@ -52,7 +52,7 @@ const Nav = () => {
                 </Col>
               </Row>
             </Col>
-            <Col>
+            <Col sm={12}>
               <Navbar.Collapse id="basic-navbar-nav">
                 <BootstrapNav className="ms auto d-xl-none text-center features-link">
                   <BootstrapNav.Link href="#">
