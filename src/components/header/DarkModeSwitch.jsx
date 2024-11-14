@@ -39,26 +39,23 @@ const DarkModeSwitch = () => {
   };
 
   return (
-    <Col xs={3} md={5} xl={4} className="form-wrapper" >
-      <Row className="text-xl-end">
-        <Col md={8} xl={10} >
-          <Form.Label
-            className="dark-mode-text d-none d-md-block text-md-end"
-            aria-label="darkmode switch"
-          >
-            Dark Mode
-          </Form.Label>
-        </Col>
-        <Col>
-          <Form.Check
-            // className="form-check-input"
-            type="switch"
-            checked={isDarkMode}
-            onChange={toggleDarkMode}
-          />
-        </Col>
-      </Row>
-    </Col>
+    <Row className="d-flex align-items-center justify-content-end">  
+      <Col sm={8} xl={10}>
+        <Form.Label
+          className="dark-mode-text d-none d-md-block text-md-end"
+          aria-label="darkmode switch"
+        >
+          Dark Mode
+        </Form.Label>
+      </Col>  
+      <Col sm={4} xl={2}>
+        <Form.Check
+          type="switch"
+          checked={isDarkMode}
+          onChange={toggleDarkMode}
+        />
+      </Col>
+    </Row>
   );
 };
 
