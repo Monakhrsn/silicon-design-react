@@ -6,10 +6,8 @@ import { Container } from 'react-bootstrap';
 const HeaderWrapper = () => {
   return ( 
     <header className="header-wrapper">
-      <Container>
-        <Nav />
-        <Hero /> 
-      </Container>
+      <Nav />
+      <Hero /> 
     </header>
   );
 }
