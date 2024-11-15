@@ -593,6 +593,9 @@ body {
           background-color: var(--clr-white);
           height: 52px;
 
+          background-color: var(--clr-bg-light);
+          color: var(--clr-text-body);
+
           &.is-invalid {
             border-color: firebrick;
           }

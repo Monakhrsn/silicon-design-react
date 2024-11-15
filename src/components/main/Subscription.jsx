@@ -103,7 +103,7 @@ const Subscription = (e) => {
                         <InputGroup className="input-wrapper mb-4 mb-md-0">
                           <Form.Control
                             type="email"
-                            className={`form-control email ${
+                            className={`email ${
                               isValid ? "" : "is-invalid"
                             }`}
                             placeholder="Your Email"
