@@ -2,6 +2,7 @@ import { Col, Button, Row, Container, Accordion } from "react-bootstrap";
 import ContactUs from "./ContactUs";
 import AccordionItem from "./AccordionItem";
 import { useEffect, useState } from "react";
+import PrimaryButton from "../../PrimaryButton";
 
 const FAQ = () => {
   const [data, setData] = useState([]);
@@ -29,7 +30,7 @@ const FAQ = () => {
       setLoading(false);
     }
   };
-  
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -106,9 +107,7 @@ const FAQ = () => {
             </Row>
             <Row className="d-md-none">
               <Col xs={12} className="my-5 text-center transition">
-                <Button className="btn btn-primary py-3 px-4">
-                  <span className="pe-2">Contact us now</span>
-                </Button>
+                <PrimaryButton className="py-3 px-4" text="Contact us now" />
               </Col>
             </Row>
           </Col>

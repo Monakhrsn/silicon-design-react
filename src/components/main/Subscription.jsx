@@ -7,7 +7,6 @@ import {
   Button,
   InputGroup,
   Form,
-  Modal,
 } from "react-bootstrap";
 
 const Subscription = (e) => {
