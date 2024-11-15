@@ -95,9 +95,9 @@ body {
       .form-wrapper {
         align-items: center;
         justify-content: center;
-        
+
         @media (min-width: $tablet-size) {
-          width: 59%;          
+          width: 59%;
         }
 
         .form-label {
@@ -106,12 +106,12 @@ body {
 
         .form-switch {
           padding: 0;
-  
+
           .form-check-input {
             padding: 0;
             --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
             --bs-form-check-bg: gray;
-  
+
             width: 2.9rem;
             height: 1.5rem;
             border: none;
@@ -119,13 +119,13 @@ body {
               0 6px 20px 0 rgb(99, 102, 241, 0.19);
 
             cursor: pointer;
-  
+
             @media (min-width: $tablet-size) {
               & {
                 box-shadow: none;
               }
             }
-  
+
             &:checked {
               background-color: var(--clr-primary);
             }
@@ -143,11 +143,11 @@ body {
           &:focus,
           &:active {
             outline: none;
-            box-shadow: none;  
+            box-shadow: none;
           }
 
           .navbar-toggler-icon {
-            color:  var(--toggle-icon-color);
+            color: var(--toggle-icon-color);
           }
         }
       }
@@ -163,7 +163,7 @@ body {
         background-position: 1.5rem;
         min-height: 35px;
         padding-left: 2rem;
-        background-position: .5rem;
+        background-position: 0.5rem;
 
         &:hover {
           color: var(--clr-primary);
@@ -578,43 +578,56 @@ body {
       padding-bottom: 2rem;
     }
 
-    .input-wrapper {
-      .email {
-        padding-left: 3rem;
-        background-image: url("/assets/images/icons/envelop.svg");
-        background-repeat: no-repeat;
-        background-position: 15px center;
-        background-size: 1.5rem;
-        font-size: 16px;
-        border-color: var(--clr-border-gray);
-        background-color: var(--clr-white);
-        height: 52px;
+    .subscription-form {
+      width: 100%;
 
-        &.is-invalid {
-          border-color: red;
+      .input-wrapper {
+        .email {
+          padding-left: 3rem;
+          background-image: url("/assets/images/icons/envelop.svg");
+          background-repeat: no-repeat;
+          background-position: 15px center;
+          background-size: 1.5rem;
+          font-size: 16px;
+          border-color: var(--clr-border-gray);
+          background-color: var(--clr-white);
+          height: 52px;
+
+          &.is-invalid {
+            border-color: firebrick;
+          }
+
+          &::placeholder {
+            color: var(--clr-text-lightest);
+          }
+
+          @media (min-width: $desktop-size) {
+            background-color: var(--clr-bg-light);
+            color: var(--clr-text-body);
+          }
         }
 
-        @media (min-width: $desktop-size) {
-          background-color: var(--clr-bg-light);
-          color: var(--clr-text-body);
+        .btn-disabled {
+          background-color: var(--clr-primary);
         }
 
-        &::placeholder {
-          color: var(--clr-text-lightest);
+        button:not(:disabled),
+        [type="button"]:not(:disabled) {
+          border: none;
+
+          &:hover {
+            color: var(--clr-primary);
+            background-color: white;
+            border: 1px solid var(--clr-primary);
+          }
         }
-      }
 
-      // button:disabled {
-      //   border-radius: 8px;
-      // }
-
-      button:not(:disabled),
-      [type="button"]:not(:disabled) {
-        border: none;
-        &:hover {
-          color: var(--clr-primary);
-          background-color: white;
-          border: 1px solid var(--clr-primary);
+        &.input-group:not(.has-validation)
+          > button:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
+            .form-floating
+          ) {
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
         }
       }
     }

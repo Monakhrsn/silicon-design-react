@@ -7,6 +7,7 @@ import {
   Button,
   InputGroup,
   Form,
+  Modal,
 } from "react-bootstrap";
 
 const Subscription = (e) => {
@@ -27,9 +28,9 @@ const Subscription = (e) => {
   const submitHandler = async(e) => {
     e.preventDefault();
 
-    if (!isValid) {
-      return alert(`Email address you have insert is not Valid`);
-    }
+    // if (!isValid) {
+    //   return alert(`Email address you have insert is not Valid`);
+    // }
 
     try {
       console.log('sending ...')
@@ -60,21 +61,20 @@ const Subscription = (e) => {
 
     
  
-    if (loading) {
-      return <div>Loading.. .</div>
-    }
+    // if (loading) {
+    //   return <div>Loading.. .</div>
+    // }
   
-    if (error) {
-      return <div>Error: {error.message}</div>
-    }
+    // if (error) {
+    //   return <div>Error: {error.message}</div>
+    // }
   };
 
   return (
     <section className="pt-md-4">
       <Container>
         <Row>
-          <Col>
-            <div className="subscription">
+          <Col className="subscription">
               <Row className="align-items-md-center">
                 <Col md={6}>
                   <Row id="newsletter" className="text-center py-5">
@@ -87,7 +87,7 @@ const Subscription = (e) => {
                         />
                       </Col>
                       <h4 className="text-start d-xl-none">
-                        Subscribe to our newslwtter
+                        Subscribe to our newsletter
                       </h4>
                       <h4 className="text-start d-none d-xl-block col-xl-10 ">
                         Subscribe to our newsletter to stay informed about
@@ -99,7 +99,7 @@ const Subscription = (e) => {
                 <Col md={6}>
                   <Row>
                     <Col className="d-flex justify-content-start align-items-center px-5">
-                      <Form onSubmit={submitHandler}>
+                      <Form className="subscription-form" onSubmit={submitHandler}>
                         <InputGroup className="input-wrapper mb-4 mb-md-0">
                           <Form.Control
                             type="email"
@@ -113,9 +113,8 @@ const Subscription = (e) => {
                             onChange={(e) => changeHandler(e)}
                             required
                           />
-
                           <Button
-                            className="btn btn-primary transition"
+                            className="btn btn-primary btn-disabled transition"
                             type="submit"
                             id="button-addon2"
                             disabled={!isValid}
@@ -123,17 +122,16 @@ const Subscription = (e) => {
                             Subscribe
                           </Button>
                           {!isValid && (
-                            <div className="invalid-feedback">
+                            <div className="invalid-feedback transition">
                               Please enter a valid email address.
                             </div>
-                          )}
+                          )}   
                         </InputGroup>
                       </Form>
                     </Col>
                   </Row>
                 </Col>
               </Row>
-            </div>
           </Col>
         </Row>
       </Container>
