@@ -28,10 +28,6 @@ const Subscription = (e) => {
   const submitHandler = async(e) => {
     e.preventDefault();
 
-    // if (!isValid) {
-    //   return alert(`Email address you have insert is not Valid`);
-    // }
-
     try {
       console.log('sending ...')
       const res = await fetch(

@@ -612,17 +612,17 @@ body {
 
         .btn-disabled {
           background-color: var(--clr-primary);
+
+          &:hover {
+            background-color: transparent;
+            border: 1px solid var(--clr-primary);
+            color: var(--clr-primary);
+          }
         }
 
         button:not(:disabled),
         [type="button"]:not(:disabled) {
           border: none;
-
-          &:hover {
-            color: var(--clr-primary);
-            background-color: white;
-            border: 1px solid var(--clr-primary);
-          }
         }
 
         &.input-group:not(.has-validation)
