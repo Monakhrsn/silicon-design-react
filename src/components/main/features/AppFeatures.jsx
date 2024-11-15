@@ -3,8 +3,8 @@ import FeaturesCard from "./FeaturesCard";
 
 const AppFeatures = () => {
   return (
-    <Container className="mt-5 mb-5">
-      <section id="app-features-section">
+    <section id="app-features-section">
+      <Container className="mt-5 mb-5">
         <Row>
           <Col className="d-none d-xl-flex">
             <Image
@@ -80,8 +80,8 @@ const AppFeatures = () => {
             </Row>
           </Col>
         </Row>
-      </section>
-    </Container>
+      </Container>
+    </section>
   );
 };
 
