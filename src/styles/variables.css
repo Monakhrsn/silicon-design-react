@@ -16,7 +16,9 @@
   --clr-ingredient-dark-mode: #161429;
   --clr-bg-testionial: #25212a;
   --clr-bg-btn-chevron-dark: #1e222b;
-  --dark-responsive-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") ;
+  --dark-responsive-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+  --bg-img-chevron-not-collapsed-dark: url("/assets/images/icons/chevron-dark.svg");
+  --bg-img-chevron-not-collapsed-light: url("/assets/images/icons/chevron.svg");
 }
 
 body {
@@ -39,6 +41,8 @@ body {
   --clr-logo-text: var(--clr-gray-900);
   --clr-link: var(--clr-gray-800);
   --toggle-icon-color: var(--clr-gray-800);
+  --bg-img-chevron-not-collapsed: var(--bg-img-chevron-not-collapsed-light);
+  --bg-img-chevron-collapsed: var(--bg-img-chevron-not-collapsed-dark);
 }
 body.dark {
   color-scheme: dark;
@@ -61,7 +65,6 @@ body.dark {
   --clr-accordion-item-heading: var(--clr-white);
   --clr-link: var(--clr-white);
   --toggle-icon-color: var(--clr-white);
-}
-body.dark span.navbar-toggler-icon {
-  --bs-navbar-toggler-icon-bg: var(--dark-responsive-icon) ;
+  --bg-img-chevron-not-collapsed: var(--bg-img-chevron-not-collapsed-light);
+  --bg-img-chevron-collapsed: var(--bg-img-chevron-not-collapsed-light);
 }/*# sourceMappingURL=variables.css.map */

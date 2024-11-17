@@ -6,6 +6,14 @@ body {
   &.dark {
     .show-light { display: none;};
     .show-dark { display: block;};
+
+    span.navbar-toggler-icon {
+      --bs-navbar-toggler-icon-bg: var(--dark-responsive-icon)
+    }
+
+    // #FAQ-section .accordion-item .accordion-button:after {
+    //   background-image: url(/assets/images/icons/chevron-dark.svg);
+    // }
   }
 }
 

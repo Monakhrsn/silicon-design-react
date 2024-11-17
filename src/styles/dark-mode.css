@@ -1,0 +1,15 @@
+body .show-light {
+  display: block;
+}
+body .show-dark {
+  display: none;
+}
+body.dark .show-light {
+  display: none;
+}
+body.dark .show-dark {
+  display: block;
+}
+body.dark span.navbar-toggler-icon {
+  --bs-navbar-toggler-icon-bg: var(--dark-responsive-icon) ;
+}/*# sourceMappingURL=dark-mode.css.map */
