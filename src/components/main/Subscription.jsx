@@ -6,13 +6,12 @@ import {
   Image,
   Button,
   InputGroup,
-  Form,
+  Form
 } from "react-bootstrap";
 
 const Subscription = (e) => {
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(true);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const isValidEmail =
@@ -28,7 +27,6 @@ const Subscription = (e) => {
     e.preventDefault();
 
     try {
-      console.log("sending ...");
       const res = await fetch(
         "https://win24-assignment.azurewebsites.net/api/forms/subscribe",
         {
@@ -43,27 +41,15 @@ const Subscription = (e) => {
       console.log(res.status);
 
       if (res.ok) {
-        setLoading(false);
         setEmail("");
         alert("you have successfully subescribed!");
-      } else {
-        throw new Error(`An Error occured! Status: ${res.status}`);
-      }
+      } 
     } catch (err) {
       alert(
         "Something went wrong! Please try again later. Error: " + err.message
       );
       setError(err);
-      setLoading(false);
     }
-
-    // if (loading) {
-    //   return <div>Loading.. .</div>
-    // }
-
-    // if (error) {
-    //   return <div>Error: {error.message}</div>
-    // }
   };
 
   return (

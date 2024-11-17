@@ -1,4 +1,4 @@
-import { Col, Button, Row, Container, Accordion } from "react-bootstrap";
+import { Col, Row, Container, Accordion, Alert } from "react-bootstrap";
 import ContactUs from "./ContactUs";
 import AccordionItem from "./AccordionItem";
 import { useEffect, useState } from "react";
@@ -7,7 +7,6 @@ import PrimaryButton from "../../PrimaryButton";
 const FAQ = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
@@ -24,10 +23,8 @@ const FAQ = () => {
       const fetcheResponse = await res.json();
 
       setData(fetcheResponse);
-      setLoading(false);
     } catch (err) {
       setError(err);
-      setLoading(false);
     }
   };
 
@@ -35,12 +32,13 @@ const FAQ = () => {
     fetchData();
   }, []);
 
-  if (loading) {
-    return <div>Loading.. .</div>;
-  }
-
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <Alert variant="danger" className="text-center">
+        <Alert.Heading>Please try again later</Alert.Heading>
+        <p>Error: {error.message}</p>
+      </Alert>
+    );
   }
 
   return (
