@@ -1,12 +1,6 @@
 import { Row, Col, Image } from "react-bootstrap";
 
-const ClientInfo = ({
-  imageClass,
-  avatarUrl,
-  // nameClass,
-  name,
-  jobbRole,
-}) => {
+const ClientInfo = ({ imageClass, avatarUrl, name, jobbRole }) => {
   return (
     <Row>
       <Col xs={3}>

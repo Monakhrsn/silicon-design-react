@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Container,
   Col,
@@ -24,42 +24,43 @@ const Subscription = (e) => {
     setIsValid(newEmail.toLowerCase().match(isValidEmail));
   };
 
-  const submitHandler = async(e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
 
     try {
-      console.log('sending ...')
+      console.log("sending ...");
       const res = await fetch(
-        "https://win24-assignment.azurewebsites.net/api/forms/subscribe", {
-          method: 'POST',
+        "https://win24-assignment.azurewebsites.net/api/forms/subscribe",
+        {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json'
-          }, 
-          body: JSON.stringify({email})
-        }, 
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
       );
 
-      console.log(res.status)
-      
+      console.log(res.status);
+
       if (res.ok) {
         setLoading(false);
-        setEmail('');
-        alert('you have successfully subescribed!');
+        setEmail("");
+        alert("you have successfully subescribed!");
       } else {
         throw new Error(`An Error occured! Status: ${res.status}`);
       }
     } catch (err) {
-      alert('Something went wrong! Please try again later. Error: ' + err.message)
+      alert(
+        "Something went wrong! Please try again later. Error: " + err.message
+      );
       setError(err);
       setLoading(false);
     }
 
-    
- 
     // if (loading) {
     //   return <div>Loading.. .</div>
     // }
-  
+
     // if (error) {
     //   return <div>Error: {error.message}</div>
     // }
@@ -70,63 +71,64 @@ const Subscription = (e) => {
       <Container>
         <Row>
           <Col className="subscription">
-              <Row className="align-items-md-center">
-                <Col md={6}>
-                  <Row id="newsletter" className="text-center py-5">
-                    <div className="d-flex justify-content-center align-items-center px-5">
-                      <Col xs={4} xl={2} className="me-xl-4">
-                        <Image
-                          className="img-fluid"
-                          src="/assets/images/icons/notification.svg"
-                          alt="Bell notification"
-                        />
-                      </Col>
-                      <h4 className="text-start d-xl-none">
-                        Subscribe to our newsletter
-                      </h4>
-                      <h4 className="text-start d-none d-xl-block col-xl-10 ">
-                        Subscribe to our newsletter to stay informed about
-                        latest updates
-                      </h4>
-                    </div>
-                  </Row>
-                </Col>
-                <Col md={6}>
-                  <Row>
-                    <Col className="d-flex justify-content-start align-items-center px-5">
-                      <Form className="subscription-form" onSubmit={submitHandler}>
-                        <InputGroup className="input-wrapper mb-4 mb-md-0">
-                          <Form.Control
-                            type="email"
-                            className={`email ${
-                              isValid ? "" : "is-invalid"
-                            }`}
-                            placeholder="Your Email"
-                            aria-label="Recipient's username"
-                            aria-describedby="button-addon2"
-                            value={email}
-                            onChange={(e) => changeHandler(e)}
-                            required
-                          />
-                          <Button
-                            className="btn btn-primary btn-disabled transition"
-                            type="submit"
-                            id="button-addon2"
-                            disabled={!isValid}
-                          >
-                            Subscribe
-                          </Button>
-                          {!isValid && (
-                            <div className="invalid-feedback transition">
-                              Please enter a valid email address.
-                            </div>
-                          )}   
-                        </InputGroup>
-                      </Form>
+            <Row className="align-items-md-center">
+              <Col md={6}>
+                <Row id="newsletter" className="text-center py-5">
+                  <div className="d-flex justify-content-center align-items-center px-5">
+                    <Col xs={4} xl={2} className="me-xl-4">
+                      <Image
+                        className="img-fluid"
+                        src="/assets/images/icons/notification.svg"
+                        alt="Bell notification"
+                      />
                     </Col>
-                  </Row>
-                </Col>
-              </Row>
+                    <h4 className="text-start d-xl-none">
+                      Subscribe to our newsletter
+                    </h4>
+                    <h4 className="text-start d-none d-xl-block col-xl-10 ">
+                      Subscribe to our newsletter to stay informed about latest
+                      updates
+                    </h4>
+                  </div>
+                </Row>
+              </Col>
+              <Col md={6}>
+                <Row>
+                  <Col className="d-flex justify-content-start align-items-center px-5">
+                    <Form
+                      className="subscription-form"
+                      onSubmit={submitHandler}
+                    >
+                      <InputGroup className="input-wrapper mb-4 mb-md-0">
+                        <Form.Control
+                          type="email"
+                          className={`email ${isValid ? "" : "is-invalid"}`}
+                          placeholder="Your Email"
+                          aria-label="Recipient's username"
+                          aria-describedby="button-addon2"
+                          value={email}
+                          onChange={(e) => changeHandler(e)}
+                          required
+                        />
+                        <Button
+                          className="btn btn-primary btn-disabled transition"
+                          type="submit"
+                          id="button-addon2"
+                          disabled={!isValid}
+                        >
+                          Subscribe
+                        </Button>
+                        {!isValid && (
+                          <div className="invalid-feedback transition">
+                            Please enter a valid email address.
+                          </div>
+                        )}
+                      </InputGroup>
+                    </Form>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>

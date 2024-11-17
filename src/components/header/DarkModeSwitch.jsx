@@ -39,7 +39,7 @@ const DarkModeSwitch = () => {
   };
 
   return (
-    <Row className="d-flex align-items-center justify-content-end">  
+    <Row className="d-flex align-items-center justify-content-end">
       <Col sm={8} xl={10}>
         <Form.Label
           className="dark-mode-text d-none d-md-block text-md-end"
@@ -47,8 +47,8 @@ const DarkModeSwitch = () => {
         >
           Dark Mode
         </Form.Label>
-      </Col>  
-      <Col sm={4} xl={2} className="text-center" >
+      </Col>
+      <Col sm={4} xl={2} className="text-center">
         <Form.Check
           type="switch"
           checked={isDarkMode}

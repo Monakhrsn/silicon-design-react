@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Rating from "./Rating";
 
 const Ratings = ({ rating }) => {

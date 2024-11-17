@@ -1,15 +1,14 @@
-import Nav from './Nav';
-import Hero from './Hero';
-import { Container } from 'react-bootstrap';
-
+import Nav from "./Nav";
+import Hero from "./Hero";
+import { Container } from "react-bootstrap";
 
 const HeaderWrapper = () => {
-  return ( 
+  return (
     <header className="header-wrapper">
       <Nav />
-      <Hero /> 
+      <Hero />
     </header>
   );
-}
- 
+};
+
 export default HeaderWrapper;

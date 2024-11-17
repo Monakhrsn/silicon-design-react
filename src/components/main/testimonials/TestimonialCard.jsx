@@ -2,13 +2,7 @@ import { Col, Image } from "react-bootstrap";
 import ClientInfo from "./ClientInfo";
 import Ratings from "./Ratings";
 
-const TestimonialCard = ({
-  text,
-  avatarUrl,
-  name,
-  jobbRole,
-  rating
-}) => {
+const TestimonialCard = ({ text, avatarUrl, name, jobbRole, rating }) => {
   return (
     <Col xs={4}>
       <div className="card testimonial-card shadow-sm">
@@ -25,11 +19,7 @@ const TestimonialCard = ({
           unfilledClass="star unfilled"
         />
         <p>{text}</p>
-        <ClientInfo
-          avatarUrl={avatarUrl}
-          name={name}
-          jobbRole={jobbRole}
-        />
+        <ClientInfo avatarUrl={avatarUrl} name={name} jobbRole={jobbRole} />
       </div>
     </Col>
   );
