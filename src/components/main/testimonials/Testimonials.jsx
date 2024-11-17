@@ -1,11 +1,10 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Alert } from "react-bootstrap";
 import TestimonialCard from "./testimonialCard";
 import { useEffect, useState } from "react";
 
 const Testimonials = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
@@ -20,10 +19,8 @@ const Testimonials = () => {
       const fetchResponse = await res.json();
 
       setData(fetchResponse);
-      setLoading(false);
     } catch (err) {
       setError(err);
-      setLoading(false);
     }
   };
 
@@ -31,12 +28,13 @@ const Testimonials = () => {
     fetchData();
   }, []);
 
-  if (loading) {
-    return <div>Loading.. .</div>;
-  }
-
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <Alert variant="danger" className="text-center">
+        <Alert.Heading>Please try again later</Alert.Heading>
+        <p>Error: {error.message}</p>
+      </Alert>
+    );
   }
 
   const mappedData = data.map((item, id) => (
